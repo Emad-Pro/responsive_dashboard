@@ -19,12 +19,11 @@ class ResponsiveDashboard extends StatelessWidget {
       child: Builder(builder: (context) {
         context.watch<HomeCubit>().state;
         return MaterialApp(
-          title: 'Dashboard Ui',
+          title: 'Dashborad UI',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             scaffoldBackgroundColor: backgroundColor,
             brightness: Brightness.dark,
-            useMaterial3: false,
           ),
           home: const MainScreens(),
         );

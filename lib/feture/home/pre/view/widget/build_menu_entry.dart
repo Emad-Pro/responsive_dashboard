@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_dashboard/core/const/constant.dart';
 import 'package:responsive_dashboard/feture/home/pre/view_model/cubit/home_cubit.dart';
 
-import '../../../data/model/menuModel.dart';
+import '../../../data/model/menu_model.dart';
 
 class BuildMenuEntry extends StatelessWidget {
   const BuildMenuEntry(this.menuModel, this.index, {super.key});
@@ -25,18 +25,22 @@ class BuildMenuEntry extends StatelessWidget {
                 .changeSelectedButtomSideMenu(index);
           },
           leading: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 13.0, vertical: 7),
+            padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 7),
             child: Icon(
               menuModel.icon,
               color: isSelected ? Colors.black : Colors.grey,
             ),
           ),
-          title: Text(
-            menuModel.title,
-            style: TextStyle(
-                fontSize: 16,
-                color: isSelected ? Colors.black : Colors.grey,
-                fontWeight: FontWeight.normal),
+          title: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              menuModel.title,
+              style: TextStyle(
+                  fontSize: 16,
+                  color: isSelected ? Colors.black : Colors.grey,
+                  fontWeight: FontWeight.normal),
+            ),
           )),
     );
   }
